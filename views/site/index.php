@@ -16,12 +16,8 @@ $this->title = 'My Day';
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading1</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+                <h2>AJAX</h2>
+                <p><a href="site/hello">Run AJAX Examples</a></p>
             </div>
             <div class="col-lg-4">
                 <h2>Heading2</h2>

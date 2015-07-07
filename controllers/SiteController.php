@@ -10,6 +10,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\web\Response; // Required for AJAX
 
+
 class SiteController extends Controller
 {
     public function behaviors()
@@ -104,6 +105,7 @@ class SiteController extends Controller
 			$response = Yii::$app->response;
 			$response->format = Response::FORMAT_JSON; // \yii\web\Response::FORMAT_JSON; // 'json';
 			
+			date_default_timezone_set("Asia/Calcutta");
 			$res = array(
 				'body'    => date('Y-m-d H:i:s'),
 				'success' => true,

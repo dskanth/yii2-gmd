@@ -17,7 +17,7 @@ $this->title = 'My Day';
         <div class="row">
             <div class="col-lg-4">
                 <h2>AJAX</h2>
-                <p><a href="site/hello">Run AJAX Examples</a></p>
+				<p><a href="<?php echo Yii::$app->homeUrl; ?>site/hello">Run AJAX Examples</a></p>
             </div>
             <div class="col-lg-4">
                 <h2>Heading2</h2>

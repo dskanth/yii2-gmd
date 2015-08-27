@@ -5,35 +5,35 @@ $this->title = 'My Day';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
+        <h3>Welcome <?php if(!Yii::$app->user->isGuest) { echo Yii::$app->user->identity->username; } ?>!</h3>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+		<?php if(Yii::$app->user->isGuest) { ?>
+        <p class="lead">Login to feed your all day activity.</p>
+		<p><a class="btn btn-lg btn-success" href="<?php echo Yii::$app->homeUrl; ?>site/login">Login</a></p>
+		<!--<a href="<?php //echo Yii::$app->homeUrl; ?>site/hello">Run AJAX Examples</a>-->
+		<?php } ?>
     </div>
 
     <div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>AJAX</h2>
-				<p><a href="<?php echo Yii::$app->homeUrl; ?>site/hello">Run AJAX Examples</a></p>
+                <h2>Money</h2>
+
+                <p>My Expenditure/Earnings today.</p>
+				<?php if(!Yii::$app->user->isGuest) { ?><p><a href="#">View</a>&nbsp;&nbsp;<a href="#">Add</a></p><?php } ?>
+            </div>
+			<div class="col-lg-4">
+                <h2>Activity</h2>
+
+                <p>My Daily Activity.</p>
+				<?php if(!Yii::$app->user->isGuest) { ?><p><a href="#">View</a>&nbsp;&nbsp;<a href="#">Add</a></p><?php } ?>
             </div>
             <div class="col-lg-4">
-                <h2>Heading2</h2>
+                <h2>Highlights</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading3</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                <p>Any special event.</p>
+				<?php if(!Yii::$app->user->isGuest) { ?><p><a href="#">View</a>&nbsp;&nbsp;<a href="#">Add</a></p><?php } ?>
             </div>
         </div>
 

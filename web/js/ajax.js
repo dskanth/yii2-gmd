@@ -39,7 +39,7 @@ function handleAjaxLink(e) {
 var ajaxCallbacks = {
 	'simpleDone': function (response) {
 		// This is called by the link attribute 'data-on-done' => 'simpleDone'
-		console.dir(response);
+		//console.dir(response);
 		$('#ajax_result_01').html(response.body);
 	},
 	

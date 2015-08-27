@@ -59,7 +59,7 @@ class SiteController extends Controller
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
+		
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
@@ -91,12 +91,7 @@ class SiteController extends Controller
         }
     }
 
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-	
-	public function actionHello() {
+    public function actionHello() {
 		return $this->render('hello');
 	}
 	

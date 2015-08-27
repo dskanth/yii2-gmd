@@ -12,13 +12,21 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?php echo Yii::$app->language ?>">
 <head>
-    <meta charset="<?= Yii::$app->charset ?>">
+    <meta charset="<?php echo Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <?php echo Html::csrfMetaTags() ?>
+    <title><?php echo Html::encode($this->title) ?></title>
+	<style type="text/css">
+	.col-lg-4 { text-align: center; }
+	</style>
     <?php $this->head() ?>
+	<?php
+	/*if (!YII_DEBUG) {
+		$this->off(\yii\web\View::EVENT_END_BODY, [\yii\debug\Module::getInstance(), 'renderToolbar']);
+	}*/
+	?>
 </head>
 <body>
 
@@ -36,7 +44,6 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
                     ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
                     Yii::$app->user->isGuest ?
                         ['label' => 'Login', 'url' => ['/site/login']] :
@@ -49,17 +56,17 @@ AppAsset::register($this);
         ?>
 
         <div class="container">
-            <?= Breadcrumbs::widget([
+            <?php echo Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
-            <?= $content ?>
+            <?php echo $content ?>
         </div>
     </div>
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; My Day <?= date('Y') ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
+            <p class="pull-left">&copy; My Day <?php echo date('Y') ?></p>
+            <p class="pull-right"><?php echo Yii::powered() ?></p>
         </div>
     </footer>
 

@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	
 	<br><br><pre>AJAX Examples</pre>
 	<?php
-	echo Html::a('Click me for date', ['site/simpleajax'], [
+	echo Html::a('Click me to view date', ['site/simpleajax'], [
         'id' => 'ajax_link_01',
         'data-on-done' => 'simpleDone',
     ]
@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	
 	echo '<tr><td colspan="2">&nbsp;</td></tr>';
 	
-	echo '<tr><td colspan="2">'.Html::a('Click me for form', ['site/formajax'], [
+	echo '<tr><td colspan="2">'.Html::a('Click me to view form details', ['site/formajax'], [
 			'id' => 'ajax_link_02',
 			'data-on-done' => 'linkFormDone',
 			'data-form-id' => 'link_form',

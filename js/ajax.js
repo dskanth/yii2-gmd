@@ -50,3 +50,8 @@ var ajaxCallbacks = {
 		$('#ajax_result_02').html(response.body);
 	}
 }
+
+function perform_action(action_type, action_name) {
+	$('#display_selected_action').html(action_type+" "+action_name);
+	$('#display_selected_action').css("padding", "10px");
+}

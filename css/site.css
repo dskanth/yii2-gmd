@@ -89,3 +89,5 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+#display_selected_action { font-size: 18px; border: 1px solid #ccc; }
